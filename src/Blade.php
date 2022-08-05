@@ -1,4 +1,6 @@
-<?php namespace Philo\Blade;
+<?php 
+
+namespace Philo\Blade;
 
 use Illuminate\Container\Container;
 use Illuminate\Events\Dispatcher;
@@ -112,7 +114,7 @@ class Blade {
 	 */
 	public function registerPhpEngine($resolver)
 	{
-		$resolver->register('php', function() { return new PhpEngine; });
+		$resolver->register('php', function() { return new PhpEngine(new Filesystem); });
 	}
 
 	/**
